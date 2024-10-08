@@ -22,8 +22,8 @@ let cache = apicache.middleware;
 const API_URL = process.env.LEETCODE_API_URL || 'https://leetcode.com/graphql';
 
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  limit: 60,
+  windowMs: 60 * 1000, // 1 minute
+  limit: 500,
   standardHeaders: 'draft-7',
   legacyHeaders: false,
   message: 'Too many request from this IP, try again in 1 hour',
